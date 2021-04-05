@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CryptoKit
 
 class HomeSceneInteractor: HomeSceneDataStore {
     
@@ -24,8 +25,8 @@ class HomeSceneInteractor: HomeSceneDataStore {
 extension HomeSceneInteractor: HomeSceneBusinessLogic {
     func fetchCharacters() {
         
-        let ts = "1"
-        let hash = "" // TODO: Implement
+        let ts = "\(Date().timeIntervalSince1970)"
+        let hash = (ts + NetworkConstants.privateKey + NetworkConstants.publicKey).stringToMD5()
         let limit = HomeScene.Search.Constants.searchPageLimit
         let offset = result?.offset ?? 0
         let input = Characters.Search.Input(timeStamp: ts, apiKey: NetworkConstants.publicKey, hash: hash, offset: offset, limit: limit, orderBy: .modifiedDateDescending)
@@ -43,5 +44,23 @@ extension HomeSceneInteractor: HomeSceneBusinessLogic {
             }
             self?.presenter.presentCharacters(result)
         }
+    }
+    
+}
+
+extension String {
+    func stringToMD5() -> String {
+        let digest = Insecure.MD5.hash(data: self.data(using: .utf8) ?? Data())
+        
+        return digest.map {
+            String(format: "%02hhx", $0)
+        }.joined()
+    }
+    
+}
+
+extension Date {
+    var millisecondsSince1970:Int64 {
+        return Int64((self.timeIntervalSince1970 * 1000.0).rounded())
     }
 }
