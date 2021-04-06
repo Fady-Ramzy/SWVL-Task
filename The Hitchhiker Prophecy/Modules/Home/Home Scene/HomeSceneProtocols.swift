@@ -11,6 +11,7 @@ import UIKit
 protocol HomeSceneDisplayView: class {
     var interactor: HomeSceneBusinessLogic? { get }
     var router: HomeSceneRoutingLogic? { get }
+    var charactersViewModel: [HomeScene.Search.ViewModel]? { set get }
     
     func didFetchCharacters(viewModel: [HomeScene.Search.ViewModel])
     func failedToFetchCharacters(error: Error)
