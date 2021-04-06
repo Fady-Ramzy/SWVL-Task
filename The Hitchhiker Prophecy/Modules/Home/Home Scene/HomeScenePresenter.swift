@@ -13,6 +13,14 @@ class HomeScenePresneter {
     // MARK: - Dependencies
     
     weak var displayView: HomeSceneDisplayView?
+    var charactersCollectionPrestationStyle: PresentationStyle = .horizontal
+    
+    // MARK: - Nested Types
+    
+    enum PresentationStyle {
+        case horizontal
+        case vertical
+    }
     
     // MARK: - Initializers
     
@@ -24,8 +32,18 @@ class HomeScenePresneter {
 // MARK: - extensions
 
 extension HomeScenePresneter: HomeScenePresentationLogic {
-    
+        
     // MARK: - Methods
+    
+    func changePresentationLayout() {
+        if charactersCollectionPrestationStyle == .horizontal {
+            charactersCollectionPrestationStyle = .vertical
+            displayView?.presentCollectionViewVertically()
+        } else {
+            charactersCollectionPrestationStyle = .horizontal
+            displayView?.presentCollectionViewHorizontally()
+        }
+    }
     
     private func mapCharatersOutputToViewModel(with output: Characters.Search.Output) -> [HomeScene.Search.ViewModel] {
         

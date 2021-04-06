@@ -23,6 +23,10 @@ class HomeSceneInteractor: HomeSceneDataStore {
 }
 
 extension HomeSceneInteractor: HomeSceneBusinessLogic {
+    func changePresentationLayout() {
+        presenter.changePresentationLayout()
+    }
+    
     func fetchCharacters() {
         
         let ts = "\(Date().timeIntervalSince1970)"

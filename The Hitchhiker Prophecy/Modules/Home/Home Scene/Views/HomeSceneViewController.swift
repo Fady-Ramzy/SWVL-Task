@@ -30,6 +30,7 @@ class HomeSceneViewController: UIViewController {
         
         interactor?.fetchCharacters()
         setupCharactersCollectionView()
+        setupRightBarButtonItem()
     }
     
     // MARK: - Methods
@@ -39,12 +40,39 @@ class HomeSceneViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "HomeCharacterCollectionViewCell", bundle: Bundle(for: HomeCharacterCollectionViewCell.self)), forCellWithReuseIdentifier: "HomeCharacterCollectionViewCell")
 }
+    
+    private func setupRightBarButtonItem() {
+        let barButtonItem = UIBarButtonItem(
+            title: "Change layout",
+            style: .done,
+            target: self,
+            action: #selector(changeCollectionViewLayout))
+        barButtonItem.tintColor = .white
+        navigationItem.rightBarButtonItem = barButtonItem
+    }
 
+    
+    @objc
+    private func changeCollectionViewLayout() {
+        interactor?.changePresentationLayout()
+    }
 }
 
 // MARK: - extensions
 
 extension HomeSceneViewController: HomeSceneDisplayView {
+    func presentCollectionViewHorizontally() {
+        let collectionViewFlowLayout =  UICollectionViewFlowLayout()
+        collectionViewFlowLayout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = collectionViewFlowLayout
+    }
+    
+    func presentCollectionViewVertically() {
+        let collectionViewFlowLayout =  UICollectionViewFlowLayout()
+        collectionViewFlowLayout.scrollDirection = .vertical
+        collectionView.collectionViewLayout = collectionViewFlowLayout
+    }
+    
     func didFetchCharacters(viewModel: [HomeScene.Search.ViewModel]) {
         self.charactersViewModel = viewModel
         collectionView.reloadData()
@@ -57,7 +85,7 @@ extension HomeSceneViewController: HomeSceneDisplayView {
 
 extension HomeSceneViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        router?.routeToCharacterDetailsWithCharacter(at: indexPath.row)
     }
 }
 
