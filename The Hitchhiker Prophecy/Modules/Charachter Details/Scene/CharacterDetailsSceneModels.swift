@@ -8,15 +8,15 @@
 //  Lets model it 🕺🏽💃🏽
 //
 
-enum CharacterDetailsScene {
-    enum FetchCharacter { }
+public enum CharacterDetailsScene {
+    public enum FetchCharacter { }
     enum Constants {}
 }
 
 extension CharacterDetailsScene.FetchCharacter {
-    typealias Response = Characters.Search.Character
+    public typealias Response = Characters.Search.Character
     
-    struct ViewModel {
+   public struct ViewModel {
         let name: String
         let description: String
         let imageURL: String

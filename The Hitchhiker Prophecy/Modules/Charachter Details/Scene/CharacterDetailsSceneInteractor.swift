@@ -9,11 +9,14 @@
 //
 
 final class CharacterDetailsSceneInteractor: CharacterDetailsSceneDataStore {
+    
     // MARK: - Stored properties
+    
     let character: Characters.Search.Character
     let presenter: CharacterDetailsScenePresentationLogic
     
-    // MARK: Init
+    // MARK: Initializers
+    
     init(character: Characters.Search.Character, presenter: CharacterDetailsScenePresentationLogic) {
         self.character = character
         self.presenter = presenter
@@ -21,6 +24,7 @@ final class CharacterDetailsSceneInteractor: CharacterDetailsSceneDataStore {
 }
 
 // MARK: - CharacterDetailsBusinessLogic methods
+
 extension CharacterDetailsSceneInteractor: CharacterDetailsSceneBusinessLogic {
     func fetchCharacter() {
         presenter.presentCharacter(character)

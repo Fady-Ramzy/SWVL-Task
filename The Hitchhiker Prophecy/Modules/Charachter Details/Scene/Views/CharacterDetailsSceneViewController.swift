@@ -9,15 +9,19 @@
 import UIKit
 
 class CharacterDetailsSceneViewController: UIViewController {
-    // MARK: - Stored Properties
+    
+    // MARK: - Dependencies
+    
     var interactor: CharacterDetailsSceneBusinessLogic?
     
-    // MARK: - Outlets
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var characterImageView: UIImageView!
     @IBOutlet weak var characterNameLabel: UILabel!
     @IBOutlet weak var characterDescriptionLabel: UILabel!
     
-    // MARK: - Life Cycle
+    // MARK: - View life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.fetchCharacter()

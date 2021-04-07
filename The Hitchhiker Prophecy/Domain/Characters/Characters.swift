@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum Characters {
+public enum Characters {
     public enum Search {}
 }
