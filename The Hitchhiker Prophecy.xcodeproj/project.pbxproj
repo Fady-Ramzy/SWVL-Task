@@ -45,9 +45,7 @@
 		A9F01E9924E1EE560034ABB9 /* AppWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F01E9824E1EE560034ABB9 /* AppWindowManager.swift */; };
 		C3A19B09940FB9B0F7AADF11 /* Pods_The_Hitchhiker_Prophecy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26DE673059370D3D001872E6 /* Pods_The_Hitchhiker_Prophecy.framework */; };
 		C7DF6AC1261BC406004968F2 /* HomeCharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C7AE4E249803460053EF25 /* HomeCharacterCollectionViewCell.xib */; };
-		C7DF6AD3261CCC1D004968F2 /* HomeSceneInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6AD2261CCC1D004968F2 /* HomeSceneInteractorMock.swift */; };
 		C7DF6ADF261CD2FA004968F2 /* HomePresenterMockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6ADE261CD2FA004968F2 /* HomePresenterMockTest.swift */; };
-		C7DF6AF7261DCFD8004968F2 /* CharacterDetailsInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6AF6261DCFD8004968F2 /* CharacterDetailsInteractorTest.swift */; };
 		C7DF6AFB261DCFF9004968F2 /* CharacterDetailsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6AFA261DCFF9004968F2 /* CharacterDetailsPresenterTest.swift */; };
 		C7DF6AFF261DD4EB004968F2 /* CharacterDetailsMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6AFE261DD4EB004968F2 /* CharacterDetailsMockView.swift */; };
 		C7DF6B05261DEF0F004968F2 /* HomeSceneMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6B04261DEF0F004968F2 /* HomeSceneMockView.swift */; };
@@ -107,9 +105,7 @@
 		A9F01E9424E1ED350034ABB9 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		A9F01E9624E1ED9B0034ABB9 /* AppLibraryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLibraryManager.swift; sourceTree = "<group>"; };
 		A9F01E9824E1EE560034ABB9 /* AppWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindowManager.swift; sourceTree = "<group>"; };
-		C7DF6AD2261CCC1D004968F2 /* HomeSceneInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneInteractorMock.swift; sourceTree = "<group>"; };
 		C7DF6ADE261CD2FA004968F2 /* HomePresenterMockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterMockTest.swift; sourceTree = "<group>"; };
-		C7DF6AF6261DCFD8004968F2 /* CharacterDetailsInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsInteractorTest.swift; sourceTree = "<group>"; };
 		C7DF6AFA261DCFF9004968F2 /* CharacterDetailsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsPresenterTest.swift; sourceTree = "<group>"; };
 		C7DF6AFE261DD4EB004968F2 /* CharacterDetailsMockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsMockView.swift; sourceTree = "<group>"; };
 		C7DF6B04261DEF0F004968F2 /* HomeSceneMockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneMockView.swift; sourceTree = "<group>"; };
@@ -373,7 +369,6 @@
 		C7DF6AC4261CCB87004968F2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C7DF6AC7261CCBB2004968F2 /* Interactor */,
 				C7DF6AC6261CCBA8004968F2 /* Presenter */,
 				C7DF6AC5261CCB9F004968F2 /* View */,
 			);
@@ -396,19 +391,10 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		C7DF6AC7261CCBB2004968F2 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				C7DF6AD2261CCC1D004968F2 /* HomeSceneInteractorMock.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
 		C7DF6AEC261DCF59004968F2 /* Character Details */ = {
 			isa = PBXGroup;
 			children = (
 				C7DF6AEF261DCF87004968F2 /* View */,
-				C7DF6AEE261DCF73004968F2 /* Interactor */,
 				C7DF6AED261DCF6D004968F2 /* Presenter */,
 			);
 			path = "Character Details";
@@ -420,14 +406,6 @@
 				C7DF6AFA261DCFF9004968F2 /* CharacterDetailsPresenterTest.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		C7DF6AEE261DCF73004968F2 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				C7DF6AF6261DCFD8004968F2 /* CharacterDetailsInteractorTest.swift */,
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		C7DF6AEF261DCF87004968F2 /* View */ = {
@@ -632,9 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7DF6AD3261CCC1D004968F2 /* HomeSceneInteractorMock.swift in Sources */,
 				C7DF6AFF261DD4EB004968F2 /* CharacterDetailsMockView.swift in Sources */,
-				C7DF6AF7261DCFD8004968F2 /* CharacterDetailsInteractorTest.swift in Sources */,
 				C7DF6ADF261CD2FA004968F2 /* HomePresenterMockTest.swift in Sources */,
 				01D65F7A24913A160082F8FF /* The_Hitchhiker_ProphecyTests.swift in Sources */,
 				C7DF6B05261DEF0F004968F2 /* HomeSceneMockView.swift in Sources */,
