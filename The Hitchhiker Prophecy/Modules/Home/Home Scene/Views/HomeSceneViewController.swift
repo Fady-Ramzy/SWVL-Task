@@ -81,7 +81,10 @@ extension HomeSceneViewController: HomeSceneDisplayView {
     }
     
     func failedToFetchCharacters(error: Error) {
-        // TODO: Implement
+        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
 

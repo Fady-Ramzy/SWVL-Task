@@ -8,18 +8,18 @@
 
 import Foundation
 
-enum HomeScene {
-    enum Search { }
-    enum LayoutType {
+public enum HomeScene {
+    public enum Search { }
+    public enum LayoutType {
         case list
         case peek
     }
 }
 
 extension HomeScene.Search {
-    typealias Response = Result<Characters.Search.Output, NetworkError>
+    public typealias Response = Result<Characters.Search.Output, NetworkError>
     
-    struct ViewModel {
+    public struct ViewModel {
         var name: String
         var desc: String
         var imageUrl: String

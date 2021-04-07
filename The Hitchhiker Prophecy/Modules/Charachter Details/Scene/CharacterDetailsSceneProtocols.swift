@@ -10,13 +10,13 @@
 
 import Foundation
 
-protocol CharacterDetailsSceneDisplayLogic: class {
+public protocol CharacterDetailsSceneDisplayLogic: class {
     var interactor: CharacterDetailsSceneBusinessLogic? { get }
     
     func didFetchCharacter(viewModel: CharacterDetailsScene.FetchCharacter.ViewModel)
 }
 
-protocol CharacterDetailsSceneBusinessLogic: class {
+public protocol CharacterDetailsSceneBusinessLogic: class {
     func fetchCharacter()
 }
 
@@ -25,7 +25,7 @@ protocol CharacterDetailsSceneDataStore: class {
     var character: Characters.Search.Character { get }
 }
 
-protocol CharacterDetailsScenePresentationLogic: class {
+public protocol CharacterDetailsScenePresentationLogic: class {
     var displayView: CharacterDetailsSceneDisplayLogic? { get }
     
     func presentCharacter(_ response: CharacterDetailsScene.FetchCharacter.Response)
