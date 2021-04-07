@@ -13,7 +13,7 @@ class HomePresenterMockTest: XCTestCase {
     
     // MARK: - Properties
     
-    var presenter: HomeScenePresneter!
+    var sut: HomeScenePresneter!
     var view: HomeSceneSpyView!
     var results: Characters.Search.Results!
     var output: Characters.Search.Output!
@@ -24,7 +24,7 @@ class HomePresenterMockTest: XCTestCase {
     
     override func setUpWithError() throws {
         view = HomeSceneSpyView()
-        presenter = HomeScenePresneter(displayView: view)
+        sut = HomeScenePresneter(displayView: view)
         characterOne = Characters.Search.Character(id: 1, name: "Character One", resultDescription: "Character Description", modified: "Yes modified", thumbnail: Characters.Search.Character.Thumbnail(path: "Path", thumbnailExtension: ".jpg"), resourceURI: "URI", comics: Characters.Search.Character.Comics(available: 1, collectionURI: "URI", items: [], returned: 10), series: Characters.Search.Character.Comics(available: 1, collectionURI: "URI", items: [], returned: 10), stories: Characters.Search.Character.Stories(available: 10, collectionURI: "URI", items: [], returned: 10), events: Characters.Search.Character.Comics(available: 1, collectionURI: "URI", items: [], returned: 10), urls: [])
         
         characterTwo = Characters.Search.Character(id: 1, name: "Character One", resultDescription: "Character Description", modified: "Yes modified", thumbnail: Characters.Search.Character.Thumbnail(path: "Path", thumbnailExtension: ".jpg"), resourceURI: "URI", comics: Characters.Search.Character.Comics(available: 1, collectionURI: "URI", items: [], returned: 10), series: Characters.Search.Character.Comics(available: 1, collectionURI: "URI", items: [], returned: 10), stories: Characters.Search.Character.Stories(available: 10, collectionURI: "URI", items: [], returned: 10), events: Characters.Search.Character.Comics(available: 1, collectionURI: "URI", items: [], returned: 10), urls: [])
@@ -36,7 +36,7 @@ class HomePresenterMockTest: XCTestCase {
     
     override func tearDownWithError() throws {
         view = nil
-        presenter = nil
+        sut = nil
         results = nil
         output = nil
         characterOne = nil
@@ -49,7 +49,7 @@ class HomePresenterMockTest: XCTestCase {
         // Given
         // When
         
-        presenter.presentCharacters(.success(output))
+        sut.presentCharacters(.success(output))
         
         // Then
         
@@ -60,7 +60,7 @@ class HomePresenterMockTest: XCTestCase {
         // Given
         // When
         
-        presenter.presentCharacters(.failure(.server))
+        sut.presentCharacters(.failure(.server))
         
         // Then
         
@@ -70,41 +70,41 @@ class HomePresenterMockTest: XCTestCase {
     func test_changePresentationLayout_whenPresentationStyleIsHorizontal_shouldChangePresentationStyleToVertical() {
         // Given
         
-        presenter.charactersCollectionPrestationStyle = .horizontal
+        sut.charactersCollectionPrestationStyle = .horizontal
         
         // When
         
-        presenter.changePresentationLayout()
+        sut.changePresentationLayout()
         
         // Then
         
-        XCTAssertEqual(presenter.charactersCollectionPrestationStyle, .vertical)
+        XCTAssertEqual(sut.charactersCollectionPrestationStyle, .vertical)
     }
     
     func test_changePresentationLayout_whenPresentationStyleIsVertical_shouldChangePresentationStyleToHorizontal() {
         
         // Given
         
-        presenter.charactersCollectionPrestationStyle = .vertical
+        sut.charactersCollectionPrestationStyle = .vertical
         
         // When
         
-        presenter.changePresentationLayout()
+        sut.changePresentationLayout()
         
         // Then
         
-        XCTAssertEqual(presenter.charactersCollectionPrestationStyle, .horizontal)
+        XCTAssertEqual(sut.charactersCollectionPrestationStyle, .horizontal)
     }
     
     func test_changePresentationLayout_whenPresentationStyleIsVertical_shouldChangeViewLayoutToHorizontal() {
         
         // Given
         
-        presenter.charactersCollectionPrestationStyle = .vertical
+        sut.charactersCollectionPrestationStyle = .vertical
         
         // When
         
-        presenter.changePresentationLayout()
+        sut.changePresentationLayout()
         
         // Then
         
@@ -115,11 +115,11 @@ class HomePresenterMockTest: XCTestCase {
         
         // Given
         
-        presenter.charactersCollectionPrestationStyle = .horizontal
+        sut.charactersCollectionPrestationStyle = .horizontal
         
         // When
         
-        presenter.changePresentationLayout()
+        sut.changePresentationLayout()
         
         // Then
         
@@ -129,7 +129,7 @@ class HomePresenterMockTest: XCTestCase {
     func test_mapCharatersOutputToViewModel_whenDataReturnedWithSuccess_shouldReturn() {
         // Given
         // When
-        let charactersViewModels = presenter.mapCharatersOutputToViewModel(with: output)
+        let charactersViewModels = sut.mapCharatersOutputToViewModel(with: output)
         
         // Then
         
@@ -139,11 +139,11 @@ class HomePresenterMockTest: XCTestCase {
     func test_mapCharatersOutputToViewModel_whenDataReturnedWithSuccess_shouldDisplayReturnedCharacters() {
         // Given
         
-        presenter.presentCharacters(.success(output))
+        sut.presentCharacters(.success(output))
             
         // When
         
-        _ = presenter.mapCharatersOutputToViewModel(with: output)
+        _ = sut.mapCharatersOutputToViewModel(with: output)
         
         // Then
         
