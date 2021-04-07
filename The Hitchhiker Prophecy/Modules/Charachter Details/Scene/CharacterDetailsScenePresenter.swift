@@ -9,17 +9,22 @@
 //
 
 final class CharacterDetailsScenePresenter {
+    
     // MARK: - Stored properties
+    
     weak var displayView: CharacterDetailsSceneDisplayLogic?
     
-    // MARK: - Init
+    // MARK: - Initializers
+    
     init(displayView: CharacterDetailsSceneDisplayLogic) {
         self.displayView = displayView
     }
 }
 
 // MARK: - CharacterDetailsPresentationLogic Methods
+
 extension CharacterDetailsScenePresenter: CharacterDetailsScenePresentationLogic {
+    
     func presentCharacter(_ response: CharacterDetailsScene.FetchCharacter.Response) {
         let imageUrl = "\(response.thumbnail.path)/\(CharacterDetailsScene.Constants.ImageSize.Portrait.uncanny.rawValue).\(response.thumbnail.thumbnailExtension)"
         let viewModel = CharacterDetailsScene.FetchCharacter.ViewModel(name: response.name,
