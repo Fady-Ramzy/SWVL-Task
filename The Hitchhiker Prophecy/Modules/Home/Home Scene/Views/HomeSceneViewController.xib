@@ -18,11 +18,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UlS-H1-jwN">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="UlS-H1-jwN">
+                    <rect key="frame" x="0.0" y="60" width="414" height="786"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="heQ-ty-fES">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="16" minimumInteritemSpacing="16" id="heQ-ty-fES">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -33,9 +33,9 @@
             <viewLayoutGuide key="safeArea" id="p9K-a1-ut4"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="UlS-H1-jwN" firstAttribute="top" secondItem="p9K-a1-ut4" secondAttribute="top" id="7xw-Ca-yAL"/>
+                <constraint firstItem="UlS-H1-jwN" firstAttribute="top" secondItem="p9K-a1-ut4" secondAttribute="top" constant="16" id="7xw-Ca-yAL"/>
                 <constraint firstItem="p9K-a1-ut4" firstAttribute="trailing" secondItem="UlS-H1-jwN" secondAttribute="trailing" id="EvB-Za-Hxo"/>
-                <constraint firstItem="p9K-a1-ut4" firstAttribute="bottom" secondItem="UlS-H1-jwN" secondAttribute="bottom" id="fvM-uQ-oEo"/>
+                <constraint firstItem="p9K-a1-ut4" firstAttribute="bottom" secondItem="UlS-H1-jwN" secondAttribute="bottom" constant="16" id="fvM-uQ-oEo"/>
                 <constraint firstItem="UlS-H1-jwN" firstAttribute="leading" secondItem="p9K-a1-ut4" secondAttribute="leading" id="zoW-N6-1HT"/>
             </constraints>
             <point key="canvasLocation" x="-107" y="-16"/>

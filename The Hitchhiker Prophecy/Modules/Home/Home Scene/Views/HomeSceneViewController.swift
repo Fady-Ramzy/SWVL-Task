@@ -22,6 +22,7 @@ class HomeSceneViewController: UIViewController {
     // MARK: - Properties
     
     var charactersViewModel: [HomeScene.Search.ViewModel]?
+    var collectionViewFlowLayout =  UICollectionViewFlowLayout()
     
     // MARK: - Life Cycle
     
@@ -39,6 +40,8 @@ class HomeSceneViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "HomeCharacterCollectionViewCell", bundle: Bundle(for: HomeCharacterCollectionViewCell.self)), forCellWithReuseIdentifier: "HomeCharacterCollectionViewCell")
+        collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
+        presentCollectionViewHorizontally()
 }
     
     private func setupRightBarButtonItem() {
@@ -62,13 +65,12 @@ class HomeSceneViewController: UIViewController {
 
 extension HomeSceneViewController: HomeSceneDisplayView {
     func presentCollectionViewHorizontally() {
-        let collectionViewFlowLayout =  UICollectionViewFlowLayout()
+        
         collectionViewFlowLayout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = collectionViewFlowLayout
     }
     
     func presentCollectionViewVertically() {
-        let collectionViewFlowLayout =  UICollectionViewFlowLayout()
         collectionViewFlowLayout.scrollDirection = .vertical
         collectionView.collectionViewLayout = collectionViewFlowLayout
     }
@@ -106,6 +108,10 @@ extension HomeSceneViewController: UICollectionViewDataSource {
 extension HomeSceneViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+        if collectionViewFlowLayout.scrollDirection == .horizontal {
+            return CGSize(width: collectionView.frame.size.width - 80, height: collectionView.frame.size.height)
+        }
+        
+        return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height * 0.3)
     }
 }

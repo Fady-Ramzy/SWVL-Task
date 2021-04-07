@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vz6-UY-YKi">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="vz6-UY-YKi" secondAttribute="height" multiplier="1:1" id="yYM-TL-xB5"/>
-                        </constraints>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="551.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTn-cf-toV">
-                        <rect key="frame" x="16" y="401" width="361" height="26.5"/>
+                        <rect key="frame" x="16" y="559.5" width="361" height="26.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26.5" id="4eK-WH-Lpx"/>
+                        </constraints>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                 <constraint firstItem="dTn-cf-toV" firstAttribute="top" secondItem="vz6-UY-YKi" secondAttribute="bottom" constant="8" id="VuL-rg-4tT"/>
                 <constraint firstItem="vz6-UY-YKi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="chf-fp-rXU"/>
                 <constraint firstAttribute="trailing" secondItem="vz6-UY-YKi" secondAttribute="trailing" id="loI-eF-Wze"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="dTn-cf-toV" secondAttribute="bottom" id="ysu-wc-Pxw"/>
+                <constraint firstAttribute="bottom" secondItem="dTn-cf-toV" secondAttribute="bottom" id="ysu-wc-Pxw"/>
             </constraints>
             <size key="customSize" width="393" height="586"/>
             <connections>
