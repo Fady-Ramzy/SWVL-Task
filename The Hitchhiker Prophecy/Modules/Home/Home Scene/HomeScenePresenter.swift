@@ -8,23 +8,23 @@
 
 import Foundation
 
-class HomeScenePresneter {
+public class HomeScenePresneter {
     
     // MARK: - Dependencies
     
-    weak var displayView: HomeSceneDisplayView?
-    var charactersCollectionPrestationStyle: PresentationStyle = .horizontal
+    weak public var displayView: HomeSceneDisplayView?
+    public var charactersCollectionPrestationStyle: PresentationStyle = .horizontal
     
     // MARK: - Nested Types
     
-    enum PresentationStyle {
+    public enum PresentationStyle {
         case horizontal
         case vertical
     }
     
     // MARK: - Initializers
     
-    init(displayView: HomeSceneDisplayView) {
+    public init(displayView: HomeSceneDisplayView) {
         self.displayView = displayView
     }
 }
@@ -35,7 +35,7 @@ extension HomeScenePresneter: HomeScenePresentationLogic {
         
     // MARK: - Methods
     
-    func changePresentationLayout() {
+    public func changePresentationLayout() {
         if charactersCollectionPrestationStyle == .horizontal {
             charactersCollectionPrestationStyle = .vertical
             displayView?.presentCollectionViewVertically()
@@ -45,14 +45,14 @@ extension HomeScenePresneter: HomeScenePresentationLogic {
         }
     }
     
-    private func mapCharatersOutputToViewModel(with output: Characters.Search.Output) -> [HomeScene.Search.ViewModel] {
+    public func mapCharatersOutputToViewModel(with output: Characters.Search.Output) -> [HomeScene.Search.ViewModel] {
         
         return output.data.results.map { characterOutput -> HomeScene.Search.ViewModel in
             return HomeScene.Search.ViewModel(name: characterOutput.name, desc: characterOutput.resultDescription, imageUrl: "\(characterOutput.thumbnail.path).\(characterOutput.thumbnail.thumbnailExtension)", comics: characterOutput.comics.collectionURI, series: characterOutput.series.collectionURI, stories: characterOutput.stories.collectionURI, events: characterOutput.events.collectionURI)
         }
     }
     
-    func presentCharacters(_ response: HomeScene.Search.Response) {
+    public func presentCharacters(_ response: HomeScene.Search.Response) {
         switch response {
         case .success(let output):
             self.displayView?.didFetchCharacters(viewModel: self.mapCharatersOutputToViewModel(with: output))

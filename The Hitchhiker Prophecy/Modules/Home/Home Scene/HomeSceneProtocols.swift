@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HomeSceneDisplayView: class {
+public protocol HomeSceneDisplayView: class {
     var interactor: HomeSceneBusinessLogic? { get }
     var router: HomeSceneRoutingLogic? { get }
     var charactersViewModel: [HomeScene.Search.ViewModel]? { set get }
@@ -19,7 +19,7 @@ protocol HomeSceneDisplayView: class {
     func presentCollectionViewVertically()
 }
 
-protocol HomeSceneBusinessLogic: class {
+public protocol HomeSceneBusinessLogic: class {
     var worker: HomeWorkerType { get }
     var presenter: HomeScenePresentationLogic { get }
     
@@ -27,27 +27,27 @@ protocol HomeSceneBusinessLogic: class {
     func changePresentationLayout()
 }
 
-protocol HomeScenePresentationLogic: class {
+public protocol HomeScenePresentationLogic: class {
     var displayView: HomeSceneDisplayView? { get }
     
     func presentCharacters(_ response: HomeScene.Search.Response)
     func changePresentationLayout()
 }
 
-protocol HomeSceneDataStore: class {
+public protocol HomeSceneDataStore: class {
     var result: Characters.Search.Results? { get }
 }
 
-protocol HomeSceneDataPassing: class {
+public protocol HomeSceneDataPassing: class {
     var dataStore: HomeSceneDataStore? { get }
 }
 
-protocol HomeSceneRoutingLogic: class {
+public protocol HomeSceneRoutingLogic: class {
     var viewController: (HomeSceneDisplayView & UIViewController)? { get }
     
     func routeToCharacterDetailsWithCharacter(at index: Int)
 }
 
-protocol HomeWorkerType {
+public protocol HomeWorkerType {
     func getCharacters(_ input: Characters.Search.Input, completion: @escaping (HomeScene.Search.Response) -> Void)
 }

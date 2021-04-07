@@ -8,15 +8,15 @@
 //  Just remember presenters takes models and produces viewmodels
 //
 
-final class CharacterDetailsScenePresenter {
+public final class CharacterDetailsScenePresenter {
     
     // MARK: - Stored properties
     
-    weak var displayView: CharacterDetailsSceneDisplayLogic?
+    weak public var displayView: CharacterDetailsSceneDisplayLogic?
     
     // MARK: - Initializers
     
-    init(displayView: CharacterDetailsSceneDisplayLogic) {
+    public init(displayView: CharacterDetailsSceneDisplayLogic) {
         self.displayView = displayView
     }
 }
@@ -25,7 +25,7 @@ final class CharacterDetailsScenePresenter {
 
 extension CharacterDetailsScenePresenter: CharacterDetailsScenePresentationLogic {
     
-    func presentCharacter(_ response: CharacterDetailsScene.FetchCharacter.Response) {
+    public func presentCharacter(_ response: CharacterDetailsScene.FetchCharacter.Response) {
         let imageUrl = "\(response.thumbnail.path)/\(CharacterDetailsScene.Constants.ImageSize.Portrait.uncanny.rawValue).\(response.thumbnail.thumbnailExtension)"
         let viewModel = CharacterDetailsScene.FetchCharacter.ViewModel(name: response.name,
                                                                        description: response.resultDescription,
