@@ -49,6 +49,8 @@
 		C7DF6AFB261DCFF9004968F2 /* CharacterDetailsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6AFA261DCFF9004968F2 /* CharacterDetailsPresenterTest.swift */; };
 		C7DF6AFF261DD4EB004968F2 /* CharacterDetailsMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6AFE261DD4EB004968F2 /* CharacterDetailsMockView.swift */; };
 		C7DF6B05261DEF0F004968F2 /* HomeSceneMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6B04261DEF0F004968F2 /* HomeSceneMockView.swift */; };
+		C7DF6B26261E1B4E004968F2 /* MD5+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6B25261E1B4E004968F2 /* MD5+String.swift */; };
+		C7DF6B2C261E1B88004968F2 /* Milliseconds+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6B2B261E1B88004968F2 /* Milliseconds+Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		C7DF6AFA261DCFF9004968F2 /* CharacterDetailsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsPresenterTest.swift; sourceTree = "<group>"; };
 		C7DF6AFE261DD4EB004968F2 /* CharacterDetailsMockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsMockView.swift; sourceTree = "<group>"; };
 		C7DF6B04261DEF0F004968F2 /* HomeSceneMockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneMockView.swift; sourceTree = "<group>"; };
+		C7DF6B25261E1B4E004968F2 /* MD5+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MD5+String.swift"; sourceTree = "<group>"; };
+		C7DF6B2B261E1B88004968F2 /* Milliseconds+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Milliseconds+Date.swift"; sourceTree = "<group>"; };
 		E3CF87B7C4F610B29507908C /* Pods-The Hitchhiker Prophecy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Hitchhiker Prophecy.release.xcconfig"; path = "Target Support Files/Pods-The Hitchhiker Prophecy/Pods-The Hitchhiker Prophecy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +231,7 @@
 				76A9C3BF24A40CC4001E707F /* Main */,
 				76A9C3BE24A40CB2001E707F /* Resources */,
 				76A9C3BC24A40C93001E707F /* Modules */,
+				C7DF6B23261E1B22004968F2 /* Core */,
 				019ACF8424926512003E3ECF /* Domain */,
 				019ACF7924925BFC003E3ECF /* Networking */,
 			);
@@ -416,6 +421,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C7DF6B23261E1B22004968F2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C7DF6B24261E1B2B004968F2 /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C7DF6B24261E1B2B004968F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C7DF6B25261E1B4E004968F2 /* MD5+String.swift */,
+				C7DF6B2B261E1B88004968F2 /* Milliseconds+Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		EE489723C61A1E6A67306417 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -591,6 +613,7 @@
 				019ACF8124925E15003E3ECF /* CharacterRouter.swift in Sources */,
 				76C7AE3F2497AFBE0053EF25 /* HomeSceneRouter.swift in Sources */,
 				A9F01E9524E1ED350034ABB9 /* ThemeManager.swift in Sources */,
+				C7DF6B26261E1B4E004968F2 /* MD5+String.swift in Sources */,
 				019ACF8C24926E0E003E3ECF /* Encodable+Dictionary.swift in Sources */,
 				01AD2904249571C9006AF9D0 /* HomeSceneInteractor.swift in Sources */,
 				019ACF89249268BA003E3ECF /* CharactersSearch.swift in Sources */,
@@ -598,6 +621,7 @@
 				01D65F60249138A30082F8FF /* AppDelegate.swift in Sources */,
 				019ACF8E24926F55003E3ECF /* NetworkService.swift in Sources */,
 				01D65F8424913BD40082F8FF /* Request.swift in Sources */,
+				C7DF6B2C261E1B88004968F2 /* Milliseconds+Date.swift in Sources */,
 				019ACF8324925EB5003E3ECF /* URL_Generator.swift in Sources */,
 				76C7AE3B2497AF3F0053EF25 /* CharacterDetailsSceneConfigurator.swift in Sources */,
 				76C7AE462497B7BF0053EF25 /* CharacterDetailsSceneModels.swift in Sources */,

@@ -7,14 +7,19 @@
 //
 
 import Foundation
-import CryptoKit
 
 class HomeSceneInteractor: HomeSceneDataStore {
+    
+    // MARK: - Dependencies
     
     let worker: HomeWorkerType
     let presenter: HomeScenePresentationLogic
     
+    // MARK: - Properties
+    
     var result: Characters.Search.Results?
+    
+    // MARK: - Initializers
     
     init(worker: HomeWorkerType, presenter: HomeScenePresentationLogic) {
         self.worker = worker
@@ -23,6 +28,9 @@ class HomeSceneInteractor: HomeSceneDataStore {
 }
 
 extension HomeSceneInteractor: HomeSceneBusinessLogic {
+    
+    // MARK: - Methods
+    
     func changePresentationLayout() {
         presenter.changePresentationLayout()
     }
@@ -48,23 +56,5 @@ extension HomeSceneInteractor: HomeSceneBusinessLogic {
             }
             self?.presenter.presentCharacters(result)
         }
-    }
-    
-}
-
-extension String {
-    func stringToMD5() -> String {
-        let digest = Insecure.MD5.hash(data: self.data(using: .utf8) ?? Data())
-        
-        return digest.map {
-            String(format: "%02hhx", $0)
-        }.joined()
-    }
-    
-}
-
-extension Date {
-    var millisecondsSince1970:Int64 {
-        return Int64((self.timeIntervalSince1970 * 1000.0).rounded())
     }
 }
