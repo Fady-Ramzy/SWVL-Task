@@ -9,9 +9,12 @@
 import Alamofire
 
 public class NetworkService: NSObject {
+    
     // MARK: Stored Properties
+    
     let client: SessionManager
 
+    
     override public init() {
         client = SessionManager.default
         super.init()
