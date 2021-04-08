@@ -11,10 +11,13 @@ import The_Hitchhiker_Prophecy
 
 class CharacterDetailsPresenterMock: CharacterDetailsScenePresentationLogic {
     
-    // MARK: - Properties
+    // MARK: - Dependencies
     
     var displayView: CharacterDetailsSceneDisplayLogic?
     var selectedCharacter: CharacterDetailsScene.FetchCharacter.Response!
+    
+    // MARK: - Properties
+    
     var didSelectCharacter : Bool = false
     
     // MARK: - Methods
