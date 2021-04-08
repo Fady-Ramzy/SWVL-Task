@@ -10,18 +10,18 @@ import Foundation
 import The_Hitchhiker_Prophecy
 
 class HomeSceneMockView: HomeSceneDisplayView {
-    
+  
     // MARK: - Dependencies
     
     var interactor: HomeSceneBusinessLogic?
-    var router: HomeSceneRoutingLogic?
     var charactersViewModel: [HomeScene.Search.ViewModel]?
+    var router: HomeSceneRoutingLogic?
     var numberOfReturnedCharacters: Int = 0
+    var returnedError: Error!
     
     // MARK: - Properties
     
     var didFetchCharacters: Bool = false
-    var didReturnError: Bool = false
     var isCollectionViewPresentedVertically: Bool = false
     var isCollectionViewPresentedHorizontally: Bool = false
     
@@ -33,7 +33,7 @@ class HomeSceneMockView: HomeSceneDisplayView {
     }
     
     func failedToFetchCharacters(error: Error) {
-        didReturnError = true
+        self.returnedError = error
     }
     
     func presentCollectionViewHorizontally() {

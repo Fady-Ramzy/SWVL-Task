@@ -11,15 +11,13 @@ import The_Hitchhiker_Prophecy
 
 class HomeSceneWorkerMock: HomeWorkerType {
     
+    // MARK: - Properties
+    
+    var getCharactersResponse: HomeScene.Search.Response!
+    
     // MARK: - Functions
     
     func getCharacters(_ input: Characters.Search.Input, completion: @escaping (HomeScene.Search.Response) -> Void) {
-        completion(.success)
-        switch <#value#> {
-        case <#pattern#>:
-            <#code#>
-        default:
-            <#code#>
-        }
+        completion(getCharactersResponse)
     }
 }
