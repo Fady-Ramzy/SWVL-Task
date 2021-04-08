@@ -11,7 +11,7 @@ import XCTest
 
 class HomeInteractorTest: XCTestCase {
 
-    // MARK: - Properties
+    // MARK: - Dependencies
     
     var sut: HomeSceneInteractor!
     var worker: HomeSceneWorkerMock!

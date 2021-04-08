@@ -16,11 +16,11 @@ class HomeSceneMockView: HomeSceneDisplayView {
     var interactor: HomeSceneBusinessLogic?
     var charactersViewModel: [HomeScene.Search.ViewModel]?
     var router: HomeSceneRoutingLogic?
-    var numberOfReturnedCharacters: Int = 0
-    var returnedError: Error!
     
     // MARK: - Properties
     
+    var numberOfReturnedCharacters: Int = 0
+    var returnedError: Error!
     var didFetchCharacters: Bool = false
     var isCollectionViewPresentedVertically: Bool = false
     var isCollectionViewPresentedHorizontally: Bool = false
