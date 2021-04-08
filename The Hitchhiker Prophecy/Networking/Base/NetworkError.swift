@@ -14,3 +14,16 @@ public enum NetworkError: Error {
     cannotParseResponse,
     unknown
 }
+
+extension NetworkError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .server:
+            return "Server Error"
+        case .cannotParseResponse:
+            return "Cannot parse response"
+        case .unknown:
+            return "Unknown"
+        }
+    }
+}
