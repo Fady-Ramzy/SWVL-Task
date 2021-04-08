@@ -27,3 +27,12 @@ https://developer.marvel.com/
 - Install cocopods if not installed on your machine you can use this link to guide you through the installation process [https://guides.cocoapods.org/using/getting-started.html]
 - Run pod install
 - Run the project
+
+## Application Modules
+This project has 2 modules that represent 2 screens 
+
+**Home Scene**
+	This module represents the home screen which holds the list of characters & also changing to the layout between list & grid
+
+**Character Details**
+This module represents the details screen for every character
