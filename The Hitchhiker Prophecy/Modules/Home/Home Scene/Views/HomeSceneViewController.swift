@@ -36,13 +36,17 @@ class HomeSceneViewController: UIViewController {
     
     // MARK: - Methods
     
+    /* Setup characters collection view programatically and setup also the view layout */
+    
     private func setupCharactersCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "HomeCharacterCollectionViewCell", bundle: Bundle(for: HomeCharacterCollectionViewCell.self)), forCellWithReuseIdentifier: "HomeCharacterCollectionViewCell")
         collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
         presentCollectionViewHorizontally()
-}
+    }
+    
+    /* Add right navigation bar button item */
     
     private func setupRightBarButtonItem() {
         let barButtonItem = UIBarButtonItem(
@@ -53,7 +57,8 @@ class HomeSceneViewController: UIViewController {
         barButtonItem.tintColor = .white
         navigationItem.rightBarButtonItem = barButtonItem
     }
-
+    
+    /* Calls the interactor to delegate the changing of the presentation style to the presenter to be displayed on the view */
     
     @objc
     private func changeCollectionViewLayout() {
@@ -64,11 +69,15 @@ class HomeSceneViewController: UIViewController {
 // MARK: - extensions
 
 extension HomeSceneViewController: HomeSceneDisplayView {
+    
+    /* This method changes the scroll direction to horizonal */
+    
     func presentCollectionViewHorizontally() {
-        
         collectionViewFlowLayout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = collectionViewFlowLayout
     }
+    
+    /* This method changes the scroll direction to vertical */
     
     func presentCollectionViewVertically() {
         collectionViewFlowLayout.scrollDirection = .vertical
@@ -79,6 +88,8 @@ extension HomeSceneViewController: HomeSceneDisplayView {
         self.charactersViewModel = viewModel
         collectionView.reloadData()
     }
+    
+    /* This method presented an error popup in case get characters api returns an error */
     
     func failedToFetchCharacters(error: Error) {
         let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)

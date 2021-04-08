@@ -31,6 +31,7 @@ extension HomeSceneInteractor: HomeSceneBusinessLogic {
     
     // MARK: - Methods
     
+    /* This is method is used to change the layout of the collection view from (horizontal to vertical) & from (vertical to horizontal) */
     func changePresentationLayout() {
         presenter.changePresentationLayout()
     }

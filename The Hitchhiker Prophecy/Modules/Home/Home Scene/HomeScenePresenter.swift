@@ -17,6 +17,8 @@ public class HomeScenePresneter {
     
     // MARK: - Nested Types
     
+    /* This enum is used to change the layout of the view's collection view to be displayed vertically/horizontally */
+    
     public enum PresentationStyle {
         case horizontal
         case vertical
@@ -35,6 +37,8 @@ extension HomeScenePresneter: HomeScenePresentationLogic {
         
     // MARK: - Methods
     
+    /* This method is used to change the value the presentation style then display the selected presentation style on the view */
+    
     public func changePresentationLayout() {
         if charactersCollectionPrestationStyle == .horizontal {
             charactersCollectionPrestationStyle = .vertical
@@ -44,6 +48,8 @@ extension HomeScenePresneter: HomeScenePresentationLogic {
             displayView?.presentCollectionViewHorizontally()
         }
     }
+    
+    /* This method is used to map the mapping model properties to the view model to be displayed on the view */
     
     public func mapCharatersOutputToViewModel(with output: Characters.Search.Output) -> [HomeScene.Search.ViewModel] {
         
