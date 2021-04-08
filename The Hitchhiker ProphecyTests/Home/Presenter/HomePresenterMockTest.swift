@@ -14,7 +14,7 @@ class HomePresenterMockTest: XCTestCase {
     // MARK: - Properties
     
     var sut: HomeScenePresneter!
-    var view: HomeSceneSpyView!
+    var view: HomeSceneMockView!
     var results: Characters.Search.Results!
     var output: Characters.Search.Output!
     var characterOne: Characters.Search.Character!
@@ -23,7 +23,7 @@ class HomePresenterMockTest: XCTestCase {
     // MARK: - Life Cycle
     
     override func setUpWithError() throws {
-        view = HomeSceneSpyView()
+        view = HomeSceneMockView()
         sut = HomeScenePresneter(displayView: view)
         characterOne = Characters.Search.Character(id: 1, name: "Character One", resultDescription: "Character Description", modified: "Yes modified", thumbnail: Characters.Search.Character.Thumbnail(path: "Path", thumbnailExtension: ".jpg"), resourceURI: "URI", comics: Characters.Search.Character.Comics(available: 1, collectionURI: "URI", items: [], returned: 10), series: Characters.Search.Character.Comics(available: 1, collectionURI: "URI", items: [], returned: 10), stories: Characters.Search.Character.Stories(available: 10, collectionURI: "URI", items: [], returned: 10), events: Characters.Search.Character.Comics(available: 1, collectionURI: "URI", items: [], returned: 10), urls: [])
         
