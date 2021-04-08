@@ -10,11 +10,13 @@ import UIKit
 
 final class HomeSceneRouter: HomeSceneDataPassing {
     // MARK: - Stored properties
+    
     weak var viewController: (HomeSceneDisplayView & UIViewController)?
     var dataStore: HomeSceneDataStore?
 }
 
 // MARK: - HomeSceneRoutingLogic Methods
+
 extension HomeSceneRouter: HomeSceneRoutingLogic {
     func routeToCharacterDetailsWithCharacter(at index: Int) {
         guard let character = dataStore?.result?.results[index] else { return }

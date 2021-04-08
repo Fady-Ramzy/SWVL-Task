@@ -30,8 +30,9 @@ public protocol HomeSceneBusinessLogic: class {
 public protocol HomeScenePresentationLogic: class {
     var displayView: HomeSceneDisplayView? { get }
     
-    func presentCharacters(_ response: HomeScene.Search.Response)
+    func presentCharacters(_ response: [Characters.Search.Character])
     func changePresentationLayout()
+    func handleError(with error: NetworkError)
 }
 
 public protocol HomeSceneDataStore: class {

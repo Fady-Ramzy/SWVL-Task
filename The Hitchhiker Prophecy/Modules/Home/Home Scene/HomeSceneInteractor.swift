@@ -52,10 +52,10 @@ extension HomeSceneInteractor: HomeSceneBusinessLogic {
                 oldCharacters.append(contentsOf: newData.data.results)
                 newData.data.results = oldCharacters
                 self?.result = newData.data
+                self?.presenter.presentCharacters(newData.data.results)
             case .failure(let error):
-                print(error)
+                self?.presenter.handleError(with: error)
             }
-            self?.presenter.presentCharacters(result)
         }
     }
 }
