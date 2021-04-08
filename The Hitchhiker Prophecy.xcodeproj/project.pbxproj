@@ -51,6 +51,9 @@
 		C7DF6B05261DEF0F004968F2 /* HomeSceneMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6B04261DEF0F004968F2 /* HomeSceneMockView.swift */; };
 		C7DF6B26261E1B4E004968F2 /* MD5+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6B25261E1B4E004968F2 /* MD5+String.swift */; };
 		C7DF6B2C261E1B88004968F2 /* Milliseconds+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6B2B261E1B88004968F2 /* Milliseconds+Date.swift */; };
+		C7DF6B3A261E946F004968F2 /* HomeInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6B39261E946F004968F2 /* HomeInteractorTest.swift */; };
+		C7DF6B42261E94CF004968F2 /* HomeScenePresenterMockl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6B41261E94CF004968F2 /* HomeScenePresenterMockl.swift */; };
+		C7DF6B49261E9702004968F2 /* HomeSceneWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DF6B48261E9702004968F2 /* HomeSceneWorkerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +116,9 @@
 		C7DF6B04261DEF0F004968F2 /* HomeSceneMockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneMockView.swift; sourceTree = "<group>"; };
 		C7DF6B25261E1B4E004968F2 /* MD5+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MD5+String.swift"; sourceTree = "<group>"; };
 		C7DF6B2B261E1B88004968F2 /* Milliseconds+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Milliseconds+Date.swift"; sourceTree = "<group>"; };
+		C7DF6B39261E946F004968F2 /* HomeInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTest.swift; sourceTree = "<group>"; };
+		C7DF6B41261E94CF004968F2 /* HomeScenePresenterMockl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScenePresenterMockl.swift; sourceTree = "<group>"; };
+		C7DF6B48261E9702004968F2 /* HomeSceneWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneWorkerMock.swift; sourceTree = "<group>"; };
 		E3CF87B7C4F610B29507908C /* Pods-The Hitchhiker Prophecy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-The Hitchhiker Prophecy.release.xcconfig"; path = "Target Support Files/Pods-The Hitchhiker Prophecy/Pods-The Hitchhiker Prophecy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -374,6 +380,8 @@
 		C7DF6AC4261CCB87004968F2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C7DF6B47261E96EE004968F2 /* Worker */,
+				C7DF6B38261E9445004968F2 /* Interactor */,
 				C7DF6AC6261CCBA8004968F2 /* Presenter */,
 				C7DF6AC5261CCB9F004968F2 /* View */,
 			);
@@ -391,7 +399,8 @@
 		C7DF6AC6261CCBA8004968F2 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				C7DF6ADE261CD2FA004968F2 /* HomePresenterMockTest.swift */,
+				C7DF6B40261E94B8004968F2 /* Mock */,
+				C7DF6B3F261E94B2004968F2 /* Test */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -436,6 +445,38 @@
 				C7DF6B2B261E1B88004968F2 /* Milliseconds+Date.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C7DF6B38261E9445004968F2 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				C7DF6B39261E946F004968F2 /* HomeInteractorTest.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		C7DF6B3F261E94B2004968F2 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				C7DF6ADE261CD2FA004968F2 /* HomePresenterMockTest.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		C7DF6B40261E94B8004968F2 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				C7DF6B41261E94CF004968F2 /* HomeScenePresenterMockl.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		C7DF6B47261E96EE004968F2 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				C7DF6B48261E9702004968F2 /* HomeSceneWorkerMock.swift */,
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 		EE489723C61A1E6A67306417 /* Pods */ = {
@@ -635,8 +676,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7DF6AFF261DD4EB004968F2 /* CharacterDetailsMockView.swift in Sources */,
+				C7DF6B49261E9702004968F2 /* HomeSceneWorkerMock.swift in Sources */,
+				C7DF6B42261E94CF004968F2 /* HomeScenePresenterMockl.swift in Sources */,
 				C7DF6ADF261CD2FA004968F2 /* HomePresenterMockTest.swift in Sources */,
 				01D65F7A24913A160082F8FF /* The_Hitchhiker_ProphecyTests.swift in Sources */,
+				C7DF6B3A261E946F004968F2 /* HomeInteractorTest.swift in Sources */,
 				C7DF6B05261DEF0F004968F2 /* HomeSceneMockView.swift in Sources */,
 				C7DF6AFB261DCFF9004968F2 /* CharacterDetailsPresenterTest.swift in Sources */,
 			);

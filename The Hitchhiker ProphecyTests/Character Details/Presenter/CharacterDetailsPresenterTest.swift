@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import The_Hitchhiker_Prophecy
+@testable import The_Hitchhiker_Prophecy
 
 class CharacterDetailsPresenterTest: XCTestCase {
 
