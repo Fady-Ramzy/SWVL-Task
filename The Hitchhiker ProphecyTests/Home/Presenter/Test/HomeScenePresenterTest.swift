@@ -96,7 +96,7 @@ class HomeScenePresenterTest: XCTestCase {
         XCTAssertTrue(view.isCollectionViewPresentedVertically)
     }
     
-    func test_mapCharatersOutputToViewModel_whenDataReturnedWithSuccess_shouldReturnMappedCharacters() {
+    func test_mapCharatersOutputToViewModel_whenDataReturnedWithSuccess_shouldNumberReturnMappedCharacters() {
         // Given
         // When
         
@@ -107,7 +107,7 @@ class HomeScenePresenterTest: XCTestCase {
         XCTAssertEqual(charactersViewModels.count, 2)
     }
     
-    func test_presentCharacters_WhenDataIsReturnedWithSuccess_shouldCallDidFetchCharacters() {
+    func test_presentCharacters_whenDataIsReturnedWithSuccess_shouldCallDidFetchCharacters() {
         // Given
         // When
         
