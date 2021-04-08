@@ -8,7 +8,7 @@
 //  Looks like you're cooking something intersting 🚀
 //
 
-final class CharacterDetailsSceneInteractor: CharacterDetailsSceneDataStore {
+public final class CharacterDetailsSceneInteractor: CharacterDetailsSceneDataStore {
     
     // MARK: - Stored properties
     
@@ -17,7 +17,7 @@ final class CharacterDetailsSceneInteractor: CharacterDetailsSceneDataStore {
     
     // MARK: Initializers
     
-    init(character: Characters.Search.Character, presenter: CharacterDetailsScenePresentationLogic) {
+    public init(character: Characters.Search.Character, presenter: CharacterDetailsScenePresentationLogic) {
         self.character = character
         self.presenter = presenter
     }
@@ -26,7 +26,7 @@ final class CharacterDetailsSceneInteractor: CharacterDetailsSceneDataStore {
 // MARK: - CharacterDetailsBusinessLogic methods
 
 extension CharacterDetailsSceneInteractor: CharacterDetailsSceneBusinessLogic {
-    func fetchCharacter() {
+    public func fetchCharacter() {
         presenter.presentCharacter(character)
     }
 }

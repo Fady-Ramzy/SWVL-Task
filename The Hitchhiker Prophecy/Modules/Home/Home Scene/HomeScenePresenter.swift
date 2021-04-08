@@ -48,6 +48,7 @@ extension HomeScenePresneter: HomeScenePresentationLogic {
         self.displayView?.failedToFetchCharacters(error: error)
     }
     
+    
     public func changePresentationLayout() {
         if charactersCollectionPrestationStyle == .horizontal {
             charactersCollectionPrestationStyle = .vertical
