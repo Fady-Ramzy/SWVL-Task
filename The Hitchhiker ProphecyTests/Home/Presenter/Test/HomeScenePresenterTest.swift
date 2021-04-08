@@ -150,4 +150,15 @@ class HomeScenePresenterTest: XCTestCase {
         
         XCTAssertFalse(view.returnedError.localizedDescription.isEmpty)
     }
+    
+    func test_handleError_whenAPIReturnsAnError_returnedErrorShouldNotBeNil() {
+        // Given
+        // When
+        
+        sut.handleError(with: .unknown)
+        
+        // Then
+        
+        XCTAssertNotNil(view.returnedError)
+    }
 }

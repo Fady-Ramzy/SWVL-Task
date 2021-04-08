@@ -11,9 +11,12 @@ import The_Hitchhiker_Prophecy
 
 class HomeScenePresenterMock: HomeScenePresentationLogic {
 
-    // MARK: - Properties
+    // MARK: - Dependencies
     
     var displayView: HomeSceneDisplayView?
+    
+    // MARK: - Properties
+    
     var didChangeTheViewLayout: Bool = false
     var didPresentCharactersScreen: Bool = false
     var numberOFReturnedCharacters: Int = 0

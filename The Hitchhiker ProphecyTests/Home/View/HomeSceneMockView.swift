@@ -14,11 +14,11 @@ class HomeSceneMockView: HomeSceneDisplayView {
     // MARK: - Dependencies
     
     var interactor: HomeSceneBusinessLogic?
-    var charactersViewModel: [HomeScene.Search.ViewModel]?
     var router: HomeSceneRoutingLogic?
     
     // MARK: - Properties
     
+    var charactersViewModel: [HomeScene.Search.ViewModel]?
     var numberOfReturnedCharacters: Int = 0
     var returnedError: Error!
     var didFetchCharacters: Bool = false
