@@ -92,7 +92,7 @@ class HomeInteractorTest: XCTestCase {
         }
     }
     
-    func test_fetchCharacters_ifAPIReturnError_shouldReturnCannotParseResponseError() {
+    func test_fetchCharacters_responseCannotBeParsed_shouldReturnCannotParseResponseError() {
         // Given
         
         worker.getCharactersResponse = .failure(.cannotParseResponse)
@@ -106,7 +106,7 @@ class HomeInteractorTest: XCTestCase {
         XCTAssertEqual(presenter.returnedError, .cannotParseResponse)
     }
     
-    func test_fetchCharacters_ifAPIReturnError_shouldReturnServerError() {
+    func test_fetchCharacters_serverIsNotWorkingCorrectly_shouldReturnServerError() {
         // Given
         
         worker.getCharactersResponse = .failure(.server)
@@ -120,7 +120,7 @@ class HomeInteractorTest: XCTestCase {
         XCTAssertEqual(presenter.returnedError, .server)
     }
     
-    func test_fetchCharacters_ifAPIReturnError_shouldReturnUnknownError() {
+    func test_fetchCharacters_unknownErrorReturnedFromTheServer_shouldReturnUnknownError() {
         // Given
         
         worker.getCharactersResponse = .failure(.unknown)
