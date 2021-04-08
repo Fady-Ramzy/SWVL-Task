@@ -1,15 +1,15 @@
 //
-//  HomePresenterMockTest.swift
+//  HomeScenePresenterTest.swift
 //  The Hitchhiker ProphecyTests
 //
-//  Created by Fady Ramzy on 4/6/21.
+//  Created by Fady Ramzy on 4/8/21.
 //  Copyright © 2021 SWVL. All rights reserved.
 //
 
 import XCTest
 @testable import The_Hitchhiker_Prophecy
 
-class HomePresenterMockTest: XCTestCase {
+class HomeScenePresenterTest: XCTestCase {
     
     // MARK: - Properties
     

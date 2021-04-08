@@ -1,5 +1,5 @@
 //
-//  HomeScenePresenterMockl.swift
+//  HomeScenePresenterMock.swift
 //  The Hitchhiker ProphecyTests
 //
 //  Created by Fady Ramzy on 4/8/21.
