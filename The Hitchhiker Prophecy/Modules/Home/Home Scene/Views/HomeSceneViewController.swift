@@ -10,14 +10,14 @@ import UIKit
 
 class HomeSceneViewController: UIViewController {
     
+    // MARK: - IBOutlets
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
     // MARK: - Dependencies
     
     var interactor: HomeSceneBusinessLogic?
     var router: HomeSceneRoutingLogic?
-    
-    // MARK: - IBOutlets
-    
-    @IBOutlet private weak var collectionView: UICollectionView!
     
     // MARK: - Properties
     
@@ -42,7 +42,7 @@ class HomeSceneViewController: UIViewController {
         collectionView.register(UINib(nibName: "HomeCharacterCollectionViewCell", bundle: Bundle(for: HomeCharacterCollectionViewCell.self)), forCellWithReuseIdentifier: "HomeCharacterCollectionViewCell")
         collectionView.contentInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
         presentCollectionViewHorizontally()
-}
+    }
     
     private func setupRightBarButtonItem() {
         let barButtonItem = UIBarButtonItem(
@@ -53,7 +53,6 @@ class HomeSceneViewController: UIViewController {
         barButtonItem.tintColor = .white
         navigationItem.rightBarButtonItem = barButtonItem
     }
-
     
     @objc
     private func changeCollectionViewLayout() {
@@ -110,6 +109,8 @@ extension HomeSceneViewController: UICollectionViewDataSource {
 
 extension HomeSceneViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        /* This condition is used to check on the presentation style to resize the collection view item based on the scrolling direction */
         
         if collectionViewFlowLayout.scrollDirection == .horizontal {
             return CGSize(width: collectionView.frame.size.width - 80, height: collectionView.frame.size.height)
